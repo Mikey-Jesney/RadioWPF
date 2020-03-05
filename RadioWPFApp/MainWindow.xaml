@@ -1,0 +1,64 @@
+﻿<Window x:Class="RadioWPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Closing ="Window_Closing"
+        xmlns:local="clr-namespace:RadioWPFApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="TabButton">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="100" Background="White" BorderBrush="#ccc" BorderThickness="0,1,1,0" >
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </Window.Resources>
+
+
+
+
+
+
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="434" Margin="183,10,0,0" VerticalAlignment="Top" Width="763" Source="https://cdn.ecommercedns.uk/files/8/212198/3/3386533/one-button-retro-amfm-analogue-radio.jpg"/>
+        <Button Style="{StaticResource TabButton}" x:Name="powerButton" Content="Power" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Height="38" Width="52" Click="PowerButton_Click"  />
+        <TextBlock x:Name="On_Off_Text" HorizontalAlignment="Left" Margin="350,260,0,0" Text="Radio Off" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Style="{StaticResource TabButton}" Content="chan 1" HorizontalAlignment="Left" Margin="253,284,0,0" VerticalAlignment="Top" Click="chan_1"/>
+        <Button Style="{StaticResource TabButton}" Content="chan 2" HorizontalAlignment="Left" Margin="253,324,0,0" VerticalAlignment="Top" Click="chan_2"/>
+        <Button Style="{StaticResource TabButton}" Content="chan 3" HorizontalAlignment="Left" Margin="302,284,0,0" VerticalAlignment="Top" Click="chan_3"/>
+        <Button Style="{StaticResource TabButton}" Content="chan 4" HorizontalAlignment="Left" Margin="302,324,0,0" VerticalAlignment="Top" Click="chan_4"/>
+        <Button Style="{StaticResource TabButton}" Content="Vol Up" HorizontalAlignment="Left" Margin="505,284,0,0" VerticalAlignment="Top" Click="Vol_up" RenderTransformOrigin="0.5,0.5" Height="19" Width="55">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="1.713"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Style="{StaticResource TabButton}" Content="Vol Down" HorizontalAlignment="Left" Margin="495,319,0,0" VerticalAlignment="Top" Click="Vol_down"/>
+        <TextBlock x:Name="Volume_Text" HorizontalAlignment="Left" Margin="653,187,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+
+
+
+
+
+
+    </Grid>
+</Window>
